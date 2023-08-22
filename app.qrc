@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/icons/holy.ico</file>
+        <file>res/icons/holy.svg</file>
+        <file>res/welcome_earth.jpg</file>
+        <file>res/qml/EditorView.qml</file>
+        <file>res/qml/VideoOutput.qml</file>
+        <file>res/qml/EditorViewV2.qml</file>
+        <file>res/qml/MainView.qml</file>
+        <file>res/qml/EditorMain.qml</file>
+        <file>res/qml/HistoryView.qml</file>
+        <file>res/qml/FlatButton.qml</file>
+        <file>res/icons/deleteall.svg</file>
+        <file>res/qml/TransparentWelcomePage.qml</file>
+        <file>res/qml/FlatIconButton.qml</file>
+    </qresource>
+</RCC>
