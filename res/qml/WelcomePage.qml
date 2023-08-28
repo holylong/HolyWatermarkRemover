@@ -72,7 +72,7 @@ Rectangle {
 
     Text {
         id: methodTitle;
-        text: qsTr("click and drag file to here");
+        text: qsTr("click and drag file to here!");
         anchors.top: welcomeEarth.bottom;
         anchors.topMargin: 20;
         anchors.horizontalCenter: parent.horizontalCenter;

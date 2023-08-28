@@ -28,7 +28,8 @@ set(resource_files
             res/icons/eraser.png
             res/icons/plus.svg
             res/icons/play.svg
-            res/icons/delete.svg)
+            res/icons/delete.svg
+            res/images/background.jpg)
 
 qt_add_qml_module(appHolyWatermarkRemover
     URI HolyWatermarkRemover
@@ -46,6 +47,9 @@ qt_add_qml_module(appHolyWatermarkRemover
               res/qml/EditImagePage.qml
               res/qml/Theme.qml
               res/qml/TransparentWelcomePage.qml
+              res/qml/HistoryPage.qml
+              res/qml/AreaSelectPage.qml
+              res/qml/ImExportPage.qml
 
     RESOURCES ${resource_files}
 )

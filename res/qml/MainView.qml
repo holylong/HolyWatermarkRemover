@@ -31,4 +31,8 @@ Window {
         anchors.bottom: parent.bottom;
         anchors.margins: 10;
     }
+
+    Component.onCompleted: {
+        window.flags |= Qt.WindowStaysOnTopHint
+    }
 }

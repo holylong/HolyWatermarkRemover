@@ -32,7 +32,7 @@ Window {
         }
     }
 
-    HistoryView {
+    HistoryPage {
         width: parent.width -20;
         height: 120;
         anchors.horizontalCenter: parent.horizontalCenter;
@@ -92,5 +92,9 @@ Window {
 
             openVideoEditPage();
         }
+    }
+
+    Component.onCompleted: {
+//         rootObject.flags |= Qt.WindowStaysOnTopHint
     }
 }

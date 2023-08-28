@@ -4,25 +4,21 @@ import QtQuick.Controls 2.15
 Rectangle {
     radius: 5;
     color: Qt.rgba(32/255, 32/255, 40/255, 1)
+    visible: true;
 
-    Text {
-        id: title
-        text: qsTr("title_project");
-        anchors.left: parent.left;
-        anchors.leftMargin: 10;
-        anchors.top: parent.top;
-        anchors.topMargin: 10;
-        font.pointSize: 12;
-        font.bold: true;
-        color: "white";
-    }
-
+    property alias historyListViewWidth: historyListView.width;
+    property alias historyListViewHeight: historyListView.height;
+    property real historyListItemHeight: 60;
+    property real historyListItemImageHeight: 55;
+    property real historyListItemWidth: 105;
+ 
     Component {
         id: historyDelegate;
+        
         Rectangle {
-            anchors.margins: 5;
-            width: 105;
-            height: 70;
+            anchors.verticalCenter: parent.verticalCenter;
+            width: historyListItemWidth;
+            height: historyListItemHeight;
             radius: 8;
             visible: true;
             color: Qt.rgba(0,0,0,1);
@@ -47,7 +43,7 @@ Rectangle {
                 source: modelData;
                 fillMode: Image.PreserveAspectFit;
                 width: 90;
-                height: 55;
+                height: historyListItemImageHeight;
                 anchors.centerIn: parent;
             }
 
@@ -119,13 +115,14 @@ Rectangle {
     }
 
     ListView {
+        id: historyListView;
         layoutDirection: ListView.LeftToRight;
         orientation: Qt.Horizontal;
-        height: parent.height - title.height;
+        height: parent.height;
         width: parent.width - 50;
-        anchors.top: title.bottom;
-        anchors.topMargin: 20;
         spacing: 10;
+
+        anchors.verticalCenter: parent.verticalCenter;
 
         model: ["file:///C:/Users/mrhli/Pictures/1614075144505.jpg", "file:///C:/Users/mrhli/Pictures/image_4.jpg",
             "file:///C:/Users/mrhli/Pictures/1614075144505.jpg", "file:///C:/Users/mrhli/Pictures/image_4.jpg"]
@@ -137,11 +134,10 @@ Rectangle {
         iconSource: "../icons/deleteall.svg";
         iconWidth: 20;
         iconHeight: 20;
-        bnWidth: 25;
-        bnHeight: 25
+        bnWidth: 40;
+        bnHeight: 40;
         anchors.right: parent.right;
         anchors.rightMargin:10;
-        anchors.top: title.bottom;
-        anchors.topMargin: 20;
+        anchors.verticalCenter: parent.verticalCenter;
     }
 }

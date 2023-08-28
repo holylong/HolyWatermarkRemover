@@ -5,7 +5,8 @@ Rectangle {
     implicitWidth: 190;
     implicitHeight: 50;
 
-    color: "transparent";
+    //color: "transparent";
+    color: Qt.rgba(46/255, 46/255, 56/255, 1);
 
     property alias iconSource: icon.source;
     property alias iconWidth: icon.width;
