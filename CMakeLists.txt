@@ -29,6 +29,7 @@ set(resource_files
             res/icons/plus.svg
             res/icons/play.svg
             res/icons/delete.svg
+            res/icons/addition.svg
             res/images/background.jpg)
 
 qt_add_qml_module(appHolyWatermarkRemover
@@ -49,7 +50,11 @@ qt_add_qml_module(appHolyWatermarkRemover
               res/qml/TransparentWelcomePage.qml
               res/qml/HistoryPage.qml
               res/qml/AreaSelectPage.qml
+              res/qml/AreaModel.qml
+              res/qml/ContactPage.qml
               res/qml/ImExportPage.qml
+              res/qml/IconButton.qml
+
 
     RESOURCES ${resource_files}
 )

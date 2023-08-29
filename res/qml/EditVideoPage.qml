@@ -82,7 +82,7 @@ Window {
            // 主edit界面
            Rectangle {
                width: editVideoPage.width - 260;
-               height: editVideoPage.height - 150;
+               height: editVideoPage.height - processBar.height - prokop.height - 20;
                id: editorView
                color: Qt.rgba(32/255, 32/255, 100/255, 1);
                visible: true;
@@ -99,7 +99,7 @@ Window {
            // progressbar界面
            Rectangle {
                 id: processBar;
-                height: 70;
+                height: 80;
                 radius: 10;
                 width: editVideoPage.width - areaLayout.width - 8;
                 color: Qt.rgba(32/255, 32/255, 40/255, 1);
@@ -110,16 +110,19 @@ Window {
                     anchors.verticalCenter: parent.verticalCenter;
                     FlatIconButton {
                         id: playIconButton;
-                        bnWidth: 40;
-                        bnHeight: 40;
+                        bnWidth: 60;
+                        bnHeight: 60;
                         iconHeight: 40;
                         iconWidth: 40;
                         iconSource: "../icons/play.svg"
+                        z: 1;
                     }
 
                     ListView {
                         layoutDirection: ListView.LeftToRight;
+                        z: 0;
                         orientation: Qt.Horizontal;
+                        anchors.verticalCenter: parent.verticalCenter;
                         width: editVideoPage.width - areaLayout.width - 8;
                         height: 40;
                         model: ["file:///C:/Users/mrhli/Pictures/1614075144505.jpg", "file:///C:/Users/mrhli/Pictures/1614075144505.jpg",
@@ -140,12 +143,14 @@ Window {
 
        // Area选择区
        Column {
-        anchors.right:parent.right;
+        anchors.right: parent.right;
         id: areaLayout;
         spacing: 3;
+        height: parent.height;
         AreaSelectPage{
             id: areaSelect;
             height: editVideoPage.height/2;
+            width: editVideoPage.width - editorView.width - 6;
         }
         ImExportPage {
             height: editVideoPage.height/2;

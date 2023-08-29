@@ -13,5 +13,8 @@
         <file>res/icons/deleteall.svg</file>
         <file>res/qml/TransparentWelcomePage.qml</file>
         <file>res/qml/FlatIconButton.qml</file>
+        <file>res/qml/AreaModel.qml</file>
+        <file>res/qml/ContactPage.qml</file>
+        <file>res/qml/IconButton.qml</file>
     </qresource>
 </RCC>
