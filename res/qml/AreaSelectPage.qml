@@ -9,32 +9,47 @@ Rectangle {
     id: idAreaSelect;
     visible: true;
 
+    property list<string> areas: ["label1", "label2", "label3"]
 
-    Label {
-        id: labelArea;
-        text: qsTr("selectArea");
-        visible: true;
-        width: 40;
-        height: 40;
-        font.pixelSize: 15;
-        color: Qt.rgba(1,1,1,1);
-        anchors.left: parent.left;
-        anchors.leftMargin: 5;
+    Rectangle {
+        id: areaTitle;
+        height: 50;
+        width: parent.width;
         anchors.top: parent.top;
-        anchors.topMargin: 30;
-    }
+        anchors.topMargin: 0;
+        color: Qt.rgba(32/255, 32/255, 40/255, 1);
+        z:2;
 
-    FlatButton {
-        id: addIcon;
-        iconSource: "../icons/addition.svg";
-        iconWidth: 30;
-        iconHeight: 30;
-        anchors.right: parent.right;
-        anchors.rightMargin: 5;
-        anchors.top: parent.top;
-        anchors.topMargin: 20;
-        width: 30;
-        height: 30;
+        Label {
+            id: labelArea;
+            text: qsTr("selectArea");
+            visible: true;
+            width: 40;
+            height: 40;
+            font.pixelSize: 15;
+            color: Qt.rgba(1,1,1,1);
+            anchors.left: parent.left;
+            anchors.leftMargin: 5;
+            anchors.top: parent.top;
+            anchors.topMargin: 30;
+            z:2;
+        }
+
+        IconButton {
+            id: addIcon;
+            iconSource: "../icons/addition.svg";
+            hoveredMsg: qsTr("New_Area");
+            width: 30;
+            height: 30;
+            anchors.right: parent.right;
+            anchors.rightMargin: 5;
+            anchors.top: parent.top;
+            anchors.topMargin: 20;
+            onClicked: {
+                areas.push("area");
+            }
+            z:2;
+        }
     }
 
     Component {
@@ -64,7 +79,7 @@ Rectangle {
                     width: wrapperRect.width - 45;
                     spacing: 5;
                     Text {
-                        text: '<b>Area:</b> ' + name;
+                        text: '<b>Area:</b> ' + modelData;
                         color: "white"
                     }
                     Text {
@@ -85,10 +100,10 @@ Rectangle {
 
     ListView {
         width: parent.width;
-        height: parent.height - addIcon.height;
-        anchors.top: addIcon.bottom;
+        height: parent.height - areaTitle.height;
+        anchors.top: areaTitle.bottom;
         anchors.topMargin: 10;
-        model: AreaModel{}
+        model: areas;
 
         spacing: 5;
 

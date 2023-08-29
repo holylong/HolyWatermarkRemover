@@ -7,6 +7,8 @@ Rectangle {
     implicitWidth: 100;
     color: "transparent"
 
+    signal clicked();
+
     property alias iconSource: icon.source;
     property bool hovered: false;
     property var hoveredMsg: "undefined";
@@ -20,6 +22,11 @@ Rectangle {
         }
         onExited: {
             bkgnd.hovered = false;
+        }
+
+        onClicked: {
+            bkgnd.hovered = false;
+            bkgnd.clicked();
         }
     }
 

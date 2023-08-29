@@ -90,7 +90,7 @@ Window {
                opacity: 0.5
                Image {
                    id: nameImage
-                   source: "../images/background.jpg"
+                   source: "../images/mainui.jpg"
                    anchors.fill: parent;
                    fillMode: Image.PreserveAspectFit;
                }
