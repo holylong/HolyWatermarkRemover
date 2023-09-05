@@ -1,15 +1,16 @@
 import QtQuick 2.11
 import QtQuick.Controls 2.15
 
-Window {
+Rectangle {
     id: editVideoPage;
-//    anchors.fill: parent;
+    anchors.fill: parent;
     
-    width: 1120;
-    height: 720;
-    visible: true;
+//    width: 1120;
+//    height: 720;
+//    visible: true;
     
     signal back();
+    property bool editorRectVisiable: true;
 
     color: Qt.rgba(15/255, 15/255, 16/255, 1);
 
@@ -94,6 +95,31 @@ Window {
                    anchors.fill: parent;
                    fillMode: Image.PreserveAspectFit;
                }
+
+               Rectangle {
+                   visible: editorRectVisiable;
+                   border.color: Qt.rgba(0, 135/255, 135/255, 1);
+                   border.width: 4;
+
+                   id: blueSquare;
+                   width: 100;
+                   height: 100;
+                   color: "transparent";
+
+                   MouseArea {
+                       anchors.fill: parent;
+                       drag.target: blueSquare;
+                       drag.axis: Drag.XAndYAxis;
+                       drag.minimumX: 0;
+                       drag.minimumY: 0;
+                       drag.maximumX: editorView.width - blueSquare.width;
+                       drag.maximumY: editorView.height - blueSquare.height;
+                   }
+
+                   ResizeRectangle {
+                       resizeTarget: blueSquare;
+                   }
+               }
            }
 
            // progressbar界面
@@ -108,14 +134,20 @@ Window {
                 Row {
                     spacing: 10;
                     anchors.verticalCenter: parent.verticalCenter;
-                    FlatIconButton {
-                        id: playIconButton;
-                        bnWidth: 60;
-                        bnHeight: 60;
-                        iconHeight: 40;
-                        iconWidth: 40;
-                        iconSource: "../icons/play.svg"
-                        z: 1;
+
+                    Rectangle {
+                        width: 50;
+                        height: 50;
+                        z:2;
+                        color: Qt.rgba(32/255, 32/255, 40/255, 1);
+                        IconButton {
+                            anchors.centerIn: parent;
+                            id: playIconButton;
+                            width: 30;
+                            height: 30;
+                            iconSource: "../icons/play.svg"
+                            z: 2;
+                        }
                     }
 
                     ListView {

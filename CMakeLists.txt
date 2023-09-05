@@ -30,7 +30,9 @@ set(resource_files
             res/icons/play.svg
             res/icons/delete.svg
             res/icons/addition.svg
-            res/images/background.jpg)
+            res/images/background.jpg
+            res/images/mainui.jpg
+        res/icons/question.svg)
 
 qt_add_qml_module(appHolyWatermarkRemover
     URI HolyWatermarkRemover
@@ -54,6 +56,8 @@ qt_add_qml_module(appHolyWatermarkRemover
               res/qml/ContactPage.qml
               res/qml/ImExportPage.qml
               res/qml/IconButton.qml
+              res/qml/RectangleArea.qml
+              res/qml/ResizeRectangle.qml
 
 
     RESOURCES ${resource_files}

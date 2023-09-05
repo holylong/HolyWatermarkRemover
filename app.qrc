@@ -16,5 +16,7 @@
         <file>res/qml/AreaModel.qml</file>
         <file>res/qml/ContactPage.qml</file>
         <file>res/qml/IconButton.qml</file>
+        <file>res/qml/RectangleArea.qml</file>
+        <file>res/qml/ResizeRectangle.qml</file>
     </qresource>
 </RCC>

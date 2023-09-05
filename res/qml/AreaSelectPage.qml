@@ -112,8 +112,8 @@ Rectangle {
             color: "transparent"
             z:2;
             radius: 10;
-            border.color: "gray"
-            border.width: 3;
+            border.color: Qt.rgba(143/255, 128/255, 1, 1);
+            border.width: 1;
             anchors.horizontalCenter: parent.horizontalCenter;
         }
 
