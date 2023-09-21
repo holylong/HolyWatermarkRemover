@@ -1,6 +1,8 @@
 import QtQuick 2.0
 import QtQuick.Controls 2.15
 
+import QtQuick.Controls.Material 2.15
+
 Rectangle {
     height: 30;
     color: Qt.rgba(36/255, 36/255, 40/255, 1);
@@ -55,20 +57,51 @@ Rectangle {
 
                     SpinBox {
                         width: 50;
+                        height: 20;
                         from: 0;
                         value: 50;
                         to: 100;
                         stepSize: 1;
+
                         background: Rectangle {
                             color: Qt.rgba(64/255, 64/255, 78/255, 1);
-                            anchors.fill: parent;
+                            radius: 1
+                        }
+
+                        contentItem: Text {
+                            id: text1
+                            font.pixelSize: 20;
+                            opacity: enabled ? 1.0 : 0.3
+                            color: "white"
+                            horizontalAlignment: Text.AlignHCenter
+                            verticalAlignment: Text.AlignVCenter
+                            elide: Text.ElideRight
                         }
                     }
                     SpinBox {
-                        width: 50;
+                          width: 50
+                          height: 20
+                          value: 50
+                          stepSize: 1
+                          editable: true
+
+                          background: Rectangle {
+                              color: Qt.rgba(64/255, 64/255, 78/255, 1);
+                              radius: 1
+                          }
+
+                          contentItem: Text {
+                              color: "white"
+                          }
                     }
                     SpinBox {
                         width: 50;
+                        height: 20;
+
+                        background: Rectangle {
+                            color: Qt.rgba(64/255, 64/255, 78/255, 1);
+                            radius: 1
+                        }
                     }
                 }
             }
@@ -93,12 +126,40 @@ Rectangle {
 
                     SpinBox {
                         width: 50;
+                        height: 20;
+                        // 设置字体
+                        font.pixelSize: 16 // 设置字体大小
+
+                        // 设置文本水平和垂直居中对齐
+                        contentItem: Text {
+                            text: control.text
+                            font: control.font
+                            color: control.textColor
+                            verticalAlignment: Text.AlignVCenter // 垂直居中对齐
+                            horizontalAlignment: Text.AlignHCenter // 水平居中对齐
+                            elide: Text.ElideRight
+                            renderType: Text.NativeRendering
+                        }
+                        background: Rectangle {
+                            color: Qt.rgba(64/255, 64/255, 78/255, 1);
+                            radius: 1
+                        }
                     }
                     SpinBox {
                         width: 50;
+                        height: 20;
+                        background: Rectangle {
+                            color: Qt.rgba(64/255, 64/255, 78/255, 1);
+                            radius: 1
+                        }
                     }
                     SpinBox {
                         width: 50;
+                        height: 20;
+                        background: Rectangle {
+                            color: Qt.rgba(64/255, 64/255, 78/255, 1);
+                            radius: 1
+                        }
                     }
                 }
             }

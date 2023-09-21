@@ -21,5 +21,6 @@
         <file>res/i18n/HolyWatermarkRemover_zh_CN.qm</file>
         <file>res/qml/DragRectangle.qml</file>
         <file>res/qml/SpinAreaBar.qml</file>
+        <file>res/qml/MySpinBox.qml</file>
     </qresource>
 </RCC>

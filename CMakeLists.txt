@@ -66,6 +66,7 @@ qt_add_qml_module(appHolyWatermarkRemover
               res/qml/ResizeRectangle.qml
               res/qml/DragRectangle.qml
               res/qml/SpinAreaBar.qml
+              res/qml/MySpinBox.qml
 
 
     RESOURCES ${resource_files}
