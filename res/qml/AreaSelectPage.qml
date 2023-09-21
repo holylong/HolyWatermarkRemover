@@ -22,7 +22,7 @@ Rectangle {
 
         Label {
             id: labelArea;
-            text: qsTr("selectArea");
+            text: qsTr("id_select_area");
             visible: true;
             width: 40;
             height: 40;
@@ -38,7 +38,7 @@ Rectangle {
         IconButton {
             id: addIcon;
             iconSource: "../icons/addition.svg";
-            hoveredMsg: qsTr("New_Area");
+            hoveredMsg: qsTr("id_new_area");
             width: 30;
             height: 30;
             anchors.right: parent.right;
@@ -79,7 +79,7 @@ Rectangle {
                     width: wrapperRect.width - 45;
                     spacing: 5;
                     Text {
-                        text: '<b>Area:</b> ' + modelData;
+                        text: '<b>' + qsTr("id_area_title") + ':</b> ' + modelData;
                         color: "white"
                     }
                     Text {
@@ -92,7 +92,7 @@ Rectangle {
                     width: 20;
                     height: 20;
                     iconSource: "../icons/deleteall.svg"
-                    hoveredMsg: qsTr("delete_area");
+                    hoveredMsg: qsTr("id_delete_area");
                 }
             }
         }

@@ -88,7 +88,7 @@ Rectangle {
 
                         contentItem: Text{
                             color: "#ffffff";
-                            text: qsTr("delete_project");
+                            text: qsTr("id_delete_project");
                         }
 
                         background: Rectangle{
@@ -139,5 +139,7 @@ Rectangle {
         anchors.right: parent.right;
         anchors.rightMargin:10;
         anchors.verticalCenter: parent.verticalCenter;
+
+        hoveredMsg: qsTr("id_delete_all_project");
     }
 }

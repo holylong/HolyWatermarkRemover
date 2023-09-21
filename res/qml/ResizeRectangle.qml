@@ -3,8 +3,8 @@ import QtQuick.Window 2.15
  
 Item {
     id:rect
-    property int minimumWidth: 50
-    property int minimumHeight: 50
+    property int minimumWidth: 1
+    property int minimumHeight: 1
     property int mouseRegion: 5
     property var resizeTarget: rect
     anchors.fill: resizeTarget

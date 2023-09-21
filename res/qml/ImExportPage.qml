@@ -30,5 +30,11 @@ Rectangle {
         background: Rectangle{
             color: Qt.rgba(64/255,64/255,78/255,1);
         }
+        model: ListModel {
+            id: model
+            ListElement { text: "Banana" }
+            ListElement { text: "Apple" }
+            ListElement { text: "Coconut" }
+        }
     }
 }

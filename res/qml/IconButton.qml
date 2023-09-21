@@ -13,6 +13,10 @@ Rectangle {
     property bool hovered: false;
     property var hoveredMsg: "undefined";
 
+    border.color: "#949494";
+    border.width: hovered ? 2 : 0;
+    radius: 10;
+
     MouseArea {
         anchors.fill: parent;
         hoverEnabled: true;

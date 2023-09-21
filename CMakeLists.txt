@@ -11,13 +11,17 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 11)
 
-find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
+find_package(Qt6 6.4 REQUIRED COMPONENTS Quick LinguistTools)
 
 qt_standard_project_setup()
 
 qt_add_executable(appHolyWatermarkRemover
+    hwrconfigmanager.h hwrconfigmanager.cpp
+    hwrprojectmanager.h hwrprojectmanager.cpp
     main.cpp app.qrc
 )
+
+set(TS_FILES res/HolyWatermarkRemover_zh_CN.ts)
 
 set(resource_files
             res/icons/holy.svg
@@ -32,7 +36,9 @@ set(resource_files
             res/icons/addition.svg
             res/images/background.jpg
             res/images/mainui.jpg
-        res/icons/question.svg)
+        res/icons/question.svg
+        res/icons/operate.svg
+    res/HolyWatermarkRemover_zh_CN.ts)
 
 qt_add_qml_module(appHolyWatermarkRemover
     URI HolyWatermarkRemover
@@ -58,10 +64,14 @@ qt_add_qml_module(appHolyWatermarkRemover
               res/qml/IconButton.qml
               res/qml/RectangleArea.qml
               res/qml/ResizeRectangle.qml
+              res/qml/DragRectangle.qml
+              res/qml/SpinAreaBar.qml
 
 
     RESOURCES ${resource_files}
 )
+
+qt_create_translation(QM_FILES ${CMAKE_SOURCE_DIR} ${TS_FILES})
 
 set_target_properties(appHolyWatermarkRemover PROPERTIES
     MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
@@ -75,8 +85,14 @@ target_link_libraries(appHolyWatermarkRemover
     PRIVATE Qt6::Quick
 )
 
+#target_link_libraries(appHolyWatermarkRemover PRIVATE Qt6::LinguistTools)
+
 install(TARGETS appHolyWatermarkRemover
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
+
+if(QT_VERSION_MAJOR EQUAL 6)
+    qt_finalize_executable(HolyWatermarkRemover)
+endif()

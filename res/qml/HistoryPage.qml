@@ -7,7 +7,7 @@ Rectangle {
 
     Text {
         id: title
-        text: qsTr("title_project");
+        text: qsTr("id_title_project");
         anchors.left: parent.left;
         anchors.leftMargin: 10;
         anchors.top: parent.top;

@@ -72,7 +72,7 @@ Rectangle {
 
     Text {
         id: methodTitle;
-        text: qsTr("click and drag file to here!");
+        text: qsTr("id_click_and_drag_file_to_here");
         anchors.top: welcomeEarth.bottom;
         anchors.topMargin: 20;
         anchors.horizontalCenter: parent.horizontalCenter;
@@ -82,7 +82,7 @@ Rectangle {
     }
 
     Text {
-        text: qsTr("support video and image");
+        text: qsTr("id_support_video_and_image");
         anchors.top: methodTitle.bottom;
         anchors.topMargin: 10;
         anchors.horizontalCenter: parent.horizontalCenter;
