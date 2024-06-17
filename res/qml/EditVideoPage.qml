@@ -23,7 +23,7 @@ Rectangle {
             Image {
                 anchors.fill: parent;
                 fillMode: Image.PreserveAspectFit;
-                source: modelData;
+                source: imageData;
             }
         }
     }
@@ -86,7 +86,7 @@ Rectangle {
                width: editVideoPage.width - 260;
                height: editVideoPage.height - processBar.height - prokop.height - 40;
                id: editorView
-               color: Qt.rgba(32/255, 32/255, 100/255, 1);
+               color: Qt.rgba(32/255, 32/255, 50/255, 1);
                visible: true;
                radius:10;
 //               opacity: 0.5
@@ -95,6 +95,7 @@ Rectangle {
                    source: "../images/mainui.jpg"
                    anchors.fill: parent;
                    fillMode: Image.PreserveAspectFit;
+//                   color: Qt.rgba(32/255, 32/255, 50/255, 1);
                }
 
                Rectangle {
@@ -202,20 +203,18 @@ Rectangle {
                             anchors.verticalCenter: parent.verticalCenter;
                             width: editVideoPage.width - areaLayout.width - playIconContainer.width - 38;
                             height: 40;
-                            model: ["file:///C:/Users/mrhli/Pictures/1614075144505.jpg", "file:///C:/Users/mrhli/Pictures/1614075144505.jpg",
-                                    "file:///C:/Users/mrhli/Pictures/1614075144505.jpg", "file:///C:/Users/mrhli/Pictures/1614075144505.jpg",
-                            "file:///C:/Users/mrhli/Pictures/miui_back_desktop.jpg", "file:///C:/Users/mrhli/Pictures/1614075144505.jpg",
-                                "file:///C:/Users/mrhli/Pictures/1614075144505.jpg", "file:///C:/Users/mrhli/Pictures/1614075144505.jpg",
-                            "file:///C:/Users/mrhli/Pictures/miui_back_desktop.jpg", "file:///C:/Users/mrhli/Pictures/1614075144505.jpg",
-                                "file:///C:/Users/mrhli/Pictures/1614075144505.jpg", "file:///C:/Users/mrhli/Pictures/city_1.jpg",
-                                "file:///C:/Users/mrhli/Pictures/1614075144505.jpg", "file:///C:/Users/mrhli/Pictures/city_1.jpg",
-                            "file:///C:/Users/mrhli/Pictures/1614075144505.jpg", "file:///C:/Users/mrhli/Pictures/1614075144505.jpg",
-                            "file:///C:/Users/mrhli/Pictures/1614075144505.jpg", "file:///C:/Users/mrhli/Pictures/1614075144505.jpg",
-                            "file:///C:/Users/mrhli/Pictures/1614075144505.jpg", "file:///C:/Users/mrhli/Pictures/1614075144505.jpg",
-                            "file:///C:/Users/mrhli/Pictures/1614075144505.jpg", "file:///C:/Users/mrhli/Pictures/1614075144505.jpg",
-                            "file:///C:/Users/mrhli/Pictures/1614075144505.jpg", "file:///C:/Users/mrhli/Pictures/1614075144505.jpg",
-                            "file:///C:/Users/mrhli/Pictures/1614075144505.jpg", "file:///C:/Users/mrhli/Pictures/1614075144505.jpg",]
+                            model: videoEditor.model
                             delegate: frameDelegate;
+//                            delegate: Item {
+//                                width: parent.width
+//                                height: 200
+
+//                                Image {
+//                                    source: imageData
+//                                    fillMode: Image.PreserveAspectCrop
+//                                    anchors.fill: parent
+//                                }
+//                            }
                         }
 
                         Rectangle {

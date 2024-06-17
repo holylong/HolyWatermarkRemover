@@ -2,6 +2,8 @@
 #include <QQmlApplicationEngine>
 #include <QIcon>
 #include <QTranslator>
+#include <QQmlContext>
+#include "videoeditor.h"
 
 int main(int argc, char *argv[])
 {
@@ -24,6 +26,10 @@ int main(int argc, char *argv[])
     QQmlApplicationEngine engine;
 //    const QUrl url(u"qrc:/HolyWatermarkRemover/res/qml/MainView.qml"_qs);
 //    const QUrl url(QStringLiteral("qrc:/res/qml/Main.qml"));
+
+    VideoEditor videoEditor;
+    engine.rootContext()->setContextProperty("videoEditor", &videoEditor);
+
     const QUrl url(u"qrc:/HolyWatermarkRemover/res/qml/WatermarkScene.qml"_qs);
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,
         &app, []() { QCoreApplication::exit(-1); },

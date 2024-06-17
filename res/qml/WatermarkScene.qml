@@ -41,6 +41,7 @@ Window {
     }
 
     function openVideoEditPage(){
+        console.log("==>> is video");
         if (rootObject.editVideoComp === undefined){
             rootObject.editVideoComp = Qt.createComponent("EditVideoPage.qml");
         }
@@ -53,13 +54,14 @@ Window {
     }
 
     function openImageEditPage(){
+        console.log("==>> is image");
         if (rootObject.editImageComp === undefined){
             rootObject.editImageComp = Qt.createComponent("EditImagePage.qml");
         }
 
         if(rootObject.editImageView === undefined){
             rootObject.editImageView = rootObject.editImageComp.createObject(rootObject, {"focus": true});
-            rootObject.editImageView.back.connect(rootObject.onEditImageViewBack());
+            rootObject.editImageView.back.connect(rootObject.onEditImageViewBack);
             rootObject.editImageView.openFile(filepath);
         }
     }
@@ -81,7 +83,7 @@ Window {
     FileDialog {
         id: fileDialog;
         title: "Please select a image or video file";
-        nameFilters: ["Image Files (*.jpg *.png *.bmp)", "Video File (*.mp4 *.mkv)", "* (*.*)"];
+        nameFilters: ["Image Files (*.jpg *.png *.bmp *.jpeg)", "Video File (*.h264 *.mp4 *.mkv)", "* (*.*)"];
 //        selectedNameFilter: "Image Files (*.jpg *.png *.mp4 *.mkv)";
         onAccepted: {
             filepath = fileDialog.selectedFile
@@ -90,7 +92,15 @@ Window {
             var file = new String(fileDialog.selectedFile);
             console.log("==>> file:" + file.slice(8));
 
-            openVideoEditPage();
+            var suffix = filepath.substring(filepath.lastIndexOf ( "." )+ 1 );
+            if(suffix === "jpg" ||
+                    suffix === "png" || suffix === "bmp"  || suffix === "jpeg"){
+                openImageEditPage();
+            }else if(suffix === "h264" ||
+                    suffix === "mp4" || suffix === "mkv"){
+                videoEditor.setVideoPath(file)
+                openVideoEditPage();
+            }
         }
     }
 

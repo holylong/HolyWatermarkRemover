@@ -14,7 +14,7 @@ Rectangle {
     property alias iconHeight: icon.height;
     property alias bnHeight: bkgnd.implicitHeight;
     property alias bnWidth: bkgnd.implicitWidth;
-    property var hoveredMsg: "undefined";
+    property string hoveredMsg: "undefined";
 
     radius: 6;
     property bool hovered: false;

@@ -11,13 +11,19 @@ set(CMAKE_AUTORCC ON)
 
 set(CMAKE_CXX_STANDARD 11)
 
-find_package(Qt6 6.4 REQUIRED COMPONENTS Quick LinguistTools)
+find_package(Qt6 6.4 REQUIRED COMPONENTS Quick LinguistTools Concurrent)
+
+# demo
+set(OpenCV_DIR "D:\\commonlib\\opencv\\opencv\\build")
+find_package(OpenCV REQUIRED)
 
 qt_standard_project_setup()
 
 qt_add_executable(appHolyWatermarkRemover
     hwrconfigmanager.h hwrconfigmanager.cpp
     hwrprojectmanager.h hwrprojectmanager.cpp
+    videoeditor.h videoeditor.cpp
+    qimagelistmodel.h qimagelistmodel.cpp
     main.cpp app.qrc
 )
 
@@ -38,6 +44,19 @@ set(resource_files
             res/images/mainui.jpg
         res/icons/question.svg
         res/icons/operate.svg
+        res/icons/ic_multi_rect_line.svg
+        res/icons/ic_draw_pen.svg
+        res/icons/ic_rect_select.svg
+        res/icons/ic_compare.svg
+        res/icons/ic_larger_bold.svg
+        res/icons/ic_larger_thin.svg
+        res/icons/ic_smaller_bold.svg
+        res/icons/ic_smaller_thin.svg
+        res/icons/ic_reset.svg
+        res/icons/ic_back_bold.svg
+        res/icons/ic_forward_bold.svg
+        res/icons/ic_adapt_size.svg
+        res/icons/ic_move_with_hand.svg
     res/HolyWatermarkRemover_zh_CN.ts)
 
 qt_add_qml_module(appHolyWatermarkRemover
@@ -67,6 +86,9 @@ qt_add_qml_module(appHolyWatermarkRemover
               res/qml/DragRectangle.qml
               res/qml/SpinAreaBar.qml
               res/qml/MySpinBox.qml
+              res/qml/WatermarkToolBar.qml
+              res/qml/EditImageBar.qml
+              res/qml/DynamicIconButton.qml
 
 
     RESOURCES ${resource_files}
@@ -85,6 +107,8 @@ set_target_properties(appHolyWatermarkRemover PROPERTIES
 target_link_libraries(appHolyWatermarkRemover
     PRIVATE Qt6::Quick
 )
+target_link_libraries(appHolyWatermarkRemover PRIVATE Qt${QT_MARJOR_VERSION}::Concurrent)
+target_link_libraries(appHolyWatermarkRemover PRIVATE ${OpenCV_LIBS})
 
 #target_link_libraries(appHolyWatermarkRemover PRIVATE Qt6::LinguistTools)
 

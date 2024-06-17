@@ -22,5 +22,8 @@
         <file>res/qml/DragRectangle.qml</file>
         <file>res/qml/SpinAreaBar.qml</file>
         <file>res/qml/MySpinBox.qml</file>
+        <file>res/qml/EditImageBar.qml</file>
+        <file>res/qml/WatermarkToolBar.qml</file>
+        <file>res/qml/DynamicIconButton.qml</file>
     </qresource>
 </RCC>

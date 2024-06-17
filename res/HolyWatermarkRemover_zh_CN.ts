@@ -26,6 +26,32 @@
 </context>
 
 <context>
+<name>WatermarkToolBar</name>
+<message>
+    <location filename="WatermarkToolBar.qml" line="10"/>
+    <source>id_operator_title</source>
+    <translation type="unfinished">选择水印工具</translation>
+</message>
+<message>
+    <location filename="WatermarkToolBar.qml" line="10"/>
+    <source>tx_multi_rect_line</source>
+    <translation type="unfinished">多边形套索</translation>
+</message>
+<message>
+    <location filename="WatermarkToolBar.qml" line="10"/>
+    <source>tx_rectangle</source>
+    <translation type="unfinished">框选</translation>
+</message>
+<message>
+    <location filename="WatermarkToolBar.qml" line="10"/>
+    <source>tx_draw_pen</source>
+    <translation type="unfinished">画笔</translation>
+</message>
+</context>
+
+
+
+<context>
 <name>SpinAreaBar</name>
 <message>
     <location filename="SpinAreaBar.qml" line="10"/>
@@ -115,6 +141,30 @@
         <location filename="editimagepage.cpp" line="91"/>
         <location filename="editimagepage.cpp" line="100"/>
         <source>Images (*.png *.webp *.jpg)</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+
+<context>
+    <name>EditImageBar</name>
+    <message>
+        <location filename="EditImageBar.qml" line="45"/>
+        <source>tx_preview</source>
+        <translation type="unfinished">预览</translation>
+    </message>
+    <message>
+        <location filename="EditImageBar.qml" line="47"/>
+        <source>id_select_image</source>
+        <translation type="unfinished">选择待处理图片</translation>
+    </message>
+    <message>
+        <location filename="EditImageBar.qml" line="49"/>
+        <source>id_select_image_bg</source>
+        <translation type="unfinished">选择图片背景</translation>
+    </message>
+    <message>
+        <location filename="EditImageBar.qml" line="89"/>
+        <source>Open File</source>
         <translation type="unfinished"></translation>
     </message>
 </context>
