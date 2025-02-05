@@ -4,7 +4,7 @@
 
 
 QImageListModel::QImageListModel(QObject *parent)
-    : QAbstractListModel(parent)
+    : QAbstractListModel(parent),m_count(0)
 {
 }
 
@@ -14,7 +14,8 @@ void QImageListModel::addImage(const QImage &image)
     m_images.append(image);
 
 
-    m_count++;
+//    m_count++;
+    m_count = m_images.count();
     endInsertRows();
 
     emit countChanged();

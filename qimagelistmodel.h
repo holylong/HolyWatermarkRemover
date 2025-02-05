@@ -17,7 +17,7 @@ public:
     QImageListModel(QObject *parent = nullptr);
     QVariant getImageDataAsBase64(const QModelIndex &index) const;
     void addImage(const QImage &image);
-    Q_INVOKABLE int count(){return m_count;}
+    Q_INVOKABLE int count(){return m_images.count();}
     int rowCount(const QModelIndex &parent = QModelIndex()) const override;
     QVariant data(const QModelIndex &index, int role = Qt::DisplayRole) const override;
     QHash<int, QByteArray> roleNames() const override;

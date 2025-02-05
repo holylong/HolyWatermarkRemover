@@ -14,7 +14,7 @@ set(CMAKE_CXX_STANDARD 11)
 find_package(Qt6 6.4 REQUIRED COMPONENTS Quick LinguistTools Concurrent)
 
 # demo
-set(OpenCV_DIR "D:\\commonlib\\opencv\\opencv\\build")
+set(OpenCV_DIR "D:\\commonlib\\opencv\\opencv4100\\build")
 find_package(OpenCV REQUIRED)
 
 qt_standard_project_setup()
